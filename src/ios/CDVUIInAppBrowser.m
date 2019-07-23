@@ -917,6 +917,42 @@ static CDVUIInAppBrowser* instance = nil;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	  if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        switch ((int)[[UIScreen mainScreen] nativeBounds].size.height) {
+            case 1136:
+                statusBarFrame.size.height = STATUSBAR_HEIGHT;
+                break;
+                
+            case 1334:
+                statusBarFrame.size.height = STATUSBAR_HEIGHT;
+                break;
+                
+            case 1920:
+                statusBarFrame.size.height = STATUSBAR_HEIGHT;
+                break;
+             case 2208:
+                statusBarFrame.size.height = STATUSBAR_HEIGHT;
+                break;
+            case 2436:
+                statusBarFrame.size.height = 41;
+              
+                break;
+                
+            case 2688:
+                statusBarFrame.size.height = 41;
+              
+                break;
+                
+            case 1792:
+                statusBarFrame.size.height = 41;
+                break;
+                
+            default:
+                
+                break;
+        }
+    }
+    	
 }
 
 - (void)viewDidUnload
